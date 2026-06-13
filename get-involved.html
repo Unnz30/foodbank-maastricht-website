@@ -84,28 +84,7 @@
         <article class="copy-column">
           <h2 data-i18n="donor_title">Donate surplus food</h2>
           <p data-i18n="donor_body">Market vendors and local businesses can help by donating surplus fruit, vegetables, and other vegan-friendly ingredients that are still good to eat.</p>
-          <form class="form-grid donor-form" data-success-key="donor_success" data-endpoint="/api/food-donations">
-            <div class="form-field">
-              <label class="sr-only" for="donor-business" data-i18n="label_business">Business name</label>
-              <input id="donor-business" name="businessName" autocomplete="organization" data-i18n-placeholder="placeholder_business" placeholder="Business name">
-            </div>
-            <div class="form-field">
-              <label class="sr-only" for="donor-name" data-i18n="label_name">Name</label>
-              <input id="donor-name" name="name" autocomplete="name" required data-i18n-placeholder="placeholder_name" placeholder="Name">
-            </div>
-            <div class="form-field">
-              <label class="sr-only" for="donor-email" data-i18n="label_email">Email</label>
-              <input id="donor-email" name="email" type="email" autocomplete="email" required data-i18n-placeholder="placeholder_email" placeholder="Email">
-            </div>
-            <div class="form-field">
-              <label class="sr-only" for="donor-message" data-i18n="label_message">Message</label>
-              <textarea id="donor-message" name="message" required data-i18n-placeholder="placeholder_donor_message" placeholder="Tell us what you can donate"></textarea>
-            </div>
-            <div class="form-actions">
-              <button class="button wide" type="submit" data-i18n="donor_link">Contact us about food donations</button>
-              <span class="form-status" aria-live="polite"></span>
-            </div>
-          </form>
+          <a class="button" href="contact.html#contact-form" data-i18n="donor_link">Contact us about food donations</a>
         </article>
         <div class="media-card">
           <img src="assets/Get Involved _ 002.png" alt="Basket of donated vegetables" data-i18n-alt="img_food_donation">

@@ -1,6 +1,6 @@
 {
   "name": "foodbank-maastricht-website",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Bilingual website and lightweight form API for Foodbank Maastricht.",
   "main": "server/index.js",
   "scripts": {
