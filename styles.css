@@ -1110,15 +1110,6 @@ textarea:focus {
   color: var(--red-orange);
 }
 
-.donor-form {
-  margin-top: 34px;
-  max-width: 486px;
-}
-
-.donor-form textarea {
-  min-height: 140px;
-}
-
 .donation-band .section {
   padding-top: 120px;
   padding-bottom: 120px;
@@ -1333,13 +1324,15 @@ textarea:focus {
 
 .contact-social a {
   display: inline-flex;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   align-items: center;
+  justify-content: center;
 }
 
 .contact-social img {
-  width: 24px;
+  width: 32px;
+  height: 32px;
   filter: brightness(0);
 }
 
@@ -1443,15 +1436,16 @@ textarea:focus {
 
 .footer-social a {
   display: inline-flex;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   align-items: center;
   justify-content: center;
   transition: transform 160ms ease;
 }
 
 .footer-social img {
-  width: 16px;
+  width: 32px;
+  height: 32px;
 }
 
 @media (max-width: 1320px) {

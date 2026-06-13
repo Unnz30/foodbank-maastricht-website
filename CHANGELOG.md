@@ -2,6 +2,11 @@
 
 All notable changes to this project should be documented here. Update this file with every future merge.
 
+## [1.2.3] — 2026-06-13
+### Changed
+- Removed the surplus food donation form from the Get Involved page and linked the CTA to the Contact page form
+- Increased footer and contact page social icon sizes to 32px
+
 ## [1.2.2] — 2026-06-13
 ### Added
 - Dynamic Instagram feed endpoint for the homepage
