@@ -79,6 +79,7 @@ const translations = {
     instagram_eyebrow: "Instagram",
     instagram_title: "Follow the Friday kitchen",
     instagram_body: "Placeholder snapshots for now, ready for real market hauls, cooking scenes, and dinner-table moments.",
+    instagram_post_alt: "Instagram post from Foodbank Maastricht",
     follow_instagram: "Follow @foodbankmaastricht",
     news_eyebrow: "Latest news",
     news_title: "A home for stories from the market & weekly dinner reflections.",
@@ -275,6 +276,7 @@ const translations = {
     instagram_eyebrow: "Instagram",
     instagram_title: "Volg de vrijdagkeuken",
     instagram_body: "Voor nu placeholderbeelden, klaar voor echte marktoogsten, kookmomenten en lange tafels.",
+    instagram_post_alt: "Instagrambericht van Foodbank Maastricht",
     follow_instagram: "Volg @foodbankmaastricht",
     news_eyebrow: "Laatste nieuws",
     news_title: "Een plek voor verhalen van de markt en reflecties op het wekelijkse diner.",
@@ -590,7 +592,45 @@ function setupForms() {
   });
 }
 
+function setupInstagramFeed() {
+  const grid = document.querySelector("[data-instagram-grid]");
+  if (!grid) return;
+
+  fetch("/api/instagram?limit=6")
+    .then((response) => (response.ok ? response.json() : Promise.reject(new Error("Instagram feed unavailable."))))
+    .then((feed) => {
+      if (!feed.posts || !feed.posts.length) return;
+
+      const lang = document.documentElement.lang || getStoredLanguage();
+      const fragment = document.createDocumentFragment();
+
+      feed.posts.forEach((post) => {
+        const link = document.createElement("a");
+        link.className = "insta-tile";
+        link.href = post.permalink;
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.setAttribute("aria-label", post.caption || translations[lang].instagram_post_alt);
+
+        const image = document.createElement("img");
+        image.src = post.imageUrl;
+        image.alt = post.caption || translations[lang].instagram_post_alt;
+        image.loading = "lazy";
+
+        link.appendChild(image);
+        fragment.appendChild(link);
+      });
+
+      grid.replaceChildren(fragment);
+      grid.dataset.feedStatus = feed.cached ? "cached" : "live";
+    })
+    .catch(() => {
+      grid.dataset.feedStatus = "fallback";
+    });
+}
+
 setupMenu();
 setupLanguageToggle();
 setupForms();
+setupInstagramFeed();
 translatePage(getStoredLanguage());

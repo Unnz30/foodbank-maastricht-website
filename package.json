@@ -1,12 +1,12 @@
 {
   "name": "foodbank-maastricht-website",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Bilingual website and lightweight form API for Foodbank Maastricht.",
   "main": "server/index.js",
   "scripts": {
     "start": "node server/index.js",
     "dev": "node --watch server/index.js",
-    "check": "node --check script.js && node --check server/index.js && node --check server/db.js && node --check server/models/FormSubmission.js && node --check server/routes/submissions.js"
+    "check": "node --check script.js && node --check server/index.js && node --check server/db.js && node --check server/models/FormSubmission.js && node --check server/routes/submissions.js && node --check server/routes/instagram.js"
   },
   "dependencies": {
     "cors": "^2.8.5",

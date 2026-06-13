@@ -4,11 +4,17 @@ async function connectDatabase() {
   const uri = process.env.MONGODB_URI;
 
   if (!uri) {
-    throw new Error("MONGODB_URI is required. Add it to your local .env file.");
+    console.warn("MONGODB_URI is not set. Form submissions will be unavailable until it is configured.");
+    return false;
   }
 
   mongoose.set("strictQuery", true);
-  await mongoose.connect(uri);
+  await mongoose.connect(uri, { serverSelectionTimeoutMS: 5000 });
+  return true;
 }
 
-module.exports = { connectDatabase };
+function isDatabaseConnected() {
+  return mongoose.connection.readyState === 1;
+}
+
+module.exports = { connectDatabase, isDatabaseConnected };
