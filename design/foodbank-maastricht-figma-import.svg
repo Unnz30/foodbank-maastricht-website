@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1320" viewBox="0 0 1920 1320">
+  <defs>
+    <style>
+      .sans{font-family:Inter,Arial,sans-serif}.serif{font-family:Georgia,serif}
+      .ink{fill:#15140f}.paper{fill:#fffaf0}.canvas{fill:#fff3dc}.green{fill:#0f412c}.orange{fill:#ef5a1a}.mustard{fill:#f5b63f}.mint{fill:#c7d8a8}.tomato{fill:#c93618}.muted{fill:#6f5948}
+      .stroke{stroke:#15140f;stroke-width:3}.thin{stroke:#15140f;stroke-width:2}.small{font-size:22px}.label{font-size:18px;font-weight:800;letter-spacing:.04em}.h1{font-size:92px;font-weight:700}.h2{font-size:46px;font-weight:700}.body{font-size:24px}.button{font-size:22px;font-weight:900}
+    </style>
+  </defs>
+  <rect width="1920" height="1320" fill="#fff3dc"/>
+  <text x="80" y="78" class="serif ink h2">Foodbank Maastricht Design Handoff</text>
+  <text x="80" y="118" class="sans muted small">Import this SVG into Figma for editable layout, palette, and component direction.</text>
+
+  <g transform="translate(80 170)">
+    <rect width="1180" height="980" rx="10" class="paper stroke"/>
+    <text x="34" y="56" class="sans label ink">DESKTOP HOME / EDITORIAL DIRECTION</text>
+    <rect x="34" y="86" width="1112" height="330" rx="8" fill="#ef5a1a" stroke="#15140f" stroke-width="3"/>
+    <circle cx="1030" cy="138" r="58" fill="#f5b63f"/>
+    <text x="74" y="150" class="sans label paper">FOODBANK MAASTRICHT</text>
+    <text x="74" y="250" class="serif paper h1">Rescue.</text>
+    <text x="74" y="340" class="serif paper h1">Cook. Share.</text>
+    <rect x="78" y="360" width="210" height="52" rx="26" fill="#f5b63f" stroke="#15140f" stroke-width="3"/>
+    <text x="104" y="394" class="sans button ink">Join us Friday</text>
+    <rect x="690" y="120" width="230" height="190" rx="8" fill="#fffaf0" stroke="#15140f" stroke-width="3"/>
+    <circle cx="760" cy="190" r="38" fill="#557a38"/>
+    <circle cx="835" cy="204" r="48" fill="#c93618"/>
+    <rect x="820" y="252" width="240" height="124" rx="8" fill="#c7d8a8" stroke="#15140f" stroke-width="3"/>
+    <circle cx="880" cy="302" r="38" fill="#f5b63f"/>
+    <circle cx="958" cy="312" r="44" fill="#0f412c"/>
+
+    <rect x="96" y="450" width="988" height="116" rx="8" fill="#fffaf0" stroke="#15140f" stroke-width="3"/>
+    <line x1="425" y1="450" x2="425" y2="566" class="thin"/>
+    <line x1="754" y1="450" x2="754" y2="566" class="thin"/>
+    <text x="130" y="505" class="serif tomato h2">12+</text>
+    <text x="130" y="540" class="sans ink small">years active</text>
+    <text x="460" y="505" class="serif tomato h2">51,000 kg</text>
+    <text x="460" y="540" class="sans ink small">rescued in 2024</text>
+    <text x="790" y="505" class="serif tomato h2">100%</text>
+    <text x="790" y="540" class="sans ink small">volunteer-run</text>
+
+    <text x="58" y="638" class="sans label tomato">HOW FRIDAY WORKS</text>
+    <rect x="58" y="670" width="320" height="116" rx="8" fill="#fffaf0" stroke="#15140f" stroke-width="3"/>
+    <rect x="430" y="670" width="320" height="116" rx="8" fill="#fffaf0" stroke="#15140f" stroke-width="3"/>
+    <rect x="802" y="670" width="320" height="116" rx="8" fill="#fffaf0" stroke="#15140f" stroke-width="3"/>
+    <text x="92" y="720" class="serif ink h2">Collect</text>
+    <text x="464" y="720" class="serif ink h2">Cook</text>
+    <text x="836" y="720" class="serif ink h2">Eat</text>
+    <text x="92" y="758" class="sans muted small">Market surplus.</text>
+    <text x="464" y="758" class="sans muted small">Shared menu.</text>
+    <text x="836" y="758" class="sans muted small">Dinner at 20:00.</text>
+
+    <rect x="34" y="838" width="1112" height="118" rx="8" fill="#0f412c" stroke="#15140f" stroke-width="3"/>
+    <text x="70" y="910" class="serif paper h2">Bring your hands, appetite, or support.</text>
+    <rect x="810" y="870" width="150" height="48" rx="24" fill="#f5b63f" stroke="#15140f" stroke-width="3"/>
+    <text x="835" y="902" class="sans button ink">Volunteer</text>
+    <rect x="980" y="870" width="120" height="48" rx="24" fill="#fffaf0" stroke="#15140f" stroke-width="3"/>
+    <text x="1008" y="902" class="sans button ink">Donate</text>
+  </g>
+
+  <g transform="translate(1320 170)">
+    <text x="0" y="0" class="sans label ink">PALETTE</text>
+    <rect x="0" y="30" width="92" height="92" rx="8" class="orange stroke"/><text x="112" y="84" class="sans small ink">Orange #EF5A1A</text>
+    <rect x="0" y="150" width="92" height="92" rx="8" class="green stroke"/><text x="112" y="204" class="sans small ink">Green #0F412C</text>
+    <rect x="0" y="270" width="92" height="92" rx="8" class="mustard stroke"/><text x="112" y="324" class="sans small ink">Mustard #F5B63F</text>
+    <rect x="0" y="390" width="92" height="92" rx="8" class="mint stroke"/><text x="112" y="444" class="sans small ink">Mint #C7D8A8</text>
+    <rect x="0" y="510" width="92" height="92" rx="8" class="paper stroke"/><text x="112" y="564" class="sans small ink">Paper #FFFAF0</text>
+    <rect x="0" y="630" width="92" height="92" rx="8" class="ink stroke"/><text x="112" y="684" class="sans small ink">Ink #15140F</text>
+  </g>
+
+  <g transform="translate(1320 940)">
+    <text x="0" y="0" class="sans label ink">COMPONENT NOTES</text>
+    <text x="0" y="46" class="sans body ink">Large serif headlines</text>
+    <text x="0" y="86" class="sans body ink">Off-white editorial canvas</text>
+    <text x="0" y="126" class="sans body ink">Saturated orange and deep green</text>
+    <text x="0" y="166" class="sans body ink">Flat info panels, raised actions only</text>
+    <text x="0" y="206" class="sans body ink">Use real food/community photos later</text>
+  </g>
+</svg>

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Volunteer, donate, or offer surplus food to Foodbank Maastricht.">
+    <title>Get Involved | Foodbank Maastricht</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-title-key="title_involved">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html" aria-label="Foodbank Maastricht">
+          <img src="assets/logo_black.svg" alt="Foodbank Maastricht">
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" data-i18n-label="nav_menu_label"><span></span><span></span><span></span></button>
+        <nav class="primary-nav" aria-label="Primary navigation">
+          <ul class="nav-list">
+            <li><a href="about.html" data-i18n="nav_about">About</a></li>
+            <li><a href="get-involved.html" aria-current="page" data-i18n="nav_involved">Get involved</a></li>
+            <li><a href="events.html" data-i18n="nav_events">Events</a></li>
+            <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+          </ul>
+          <div class="language-toggle" aria-label="Language">
+            <button class="lang-button" type="button" data-lang="nl" aria-pressed="false">NL</button>
+            <button class="lang-button" type="button" data-lang="en" aria-pressed="true">EN</button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="image-hero page-hero involved-hero">
+        <img src="assets/Get Involved _ 001.png" alt="Vegan meal being served" data-i18n-alt="img_serving">
+        <div class="hero-scrim"></div>
+        <div class="hero-content">
+          <p class="eyebrow light" data-i18n="involved_eyebrow">Get involved</p>
+          <h1 data-i18n-html="involved_title_html">Show up on Friday &<br>become part of the table</h1>
+          <p class="hero-text" data-i18n="involved_intro">Foodbank Maastricht works because people contribute what they can: time, produce, money, practical skills, and a willingness to cook with whatever the market gives.</p>
+        </div>
+      </section>
+
+      <section class="section volunteer-form-section">
+        <div class="copy-column">
+          <h2 data-i18n="volunteer_title">Volunteer on Fridays</h2>
+          <p data-i18n="volunteer_body">Come to Landbouwbelang on Friday afternoon to help collect food, cook, clean, serve, or welcome guests. The kitchen is informal and hands-on, so arriving curious is enough.</p>
+        </div>
+        <form class="form-grid" data-success-key="signup_success">
+          <div class="form-field">
+            <label class="sr-only" for="volunteer-name" data-i18n="label_name">Name</label>
+            <input id="volunteer-name" name="name" autocomplete="name" required data-i18n-placeholder="placeholder_name" placeholder="Name">
+          </div>
+          <div class="form-field">
+            <label class="sr-only" for="volunteer-email" data-i18n="label_email">Email</label>
+            <input id="volunteer-email" name="email" type="email" autocomplete="email" required data-i18n-placeholder="placeholder_email" placeholder="Email">
+          </div>
+          <div class="form-field">
+            <label class="sr-only" for="volunteer-message" data-i18n="label_message">Message</label>
+            <textarea id="volunteer-message" name="message" required data-i18n-placeholder="placeholder_message" placeholder="Tell us how you would like to help"></textarea>
+          </div>
+          <div class="form-actions">
+            <button class="button wide" type="submit" data-i18n="home_cta">Join the family</button>
+            <span class="form-status" aria-live="polite"></span>
+          </div>
+        </form>
+      </section>
+
+      <section class="donation-band">
+        <div class="section">
+          <div class="donation-panel">
+            <div>
+              <h2 data-i18n="donate_title">Support the kitchen</h2>
+              <p data-i18n="donate_body">Donations help cover basic costs for a free, volunteer-run initiative: kitchen supplies, cleaning materials, transport, and the everyday things that keep Friday dinners possible.</p>
+            </div>
+            <a class="button" href="mailto:foodbankmaastricht@gmail.com?subject=Donation%20for%20Foodbank%20Maastricht" data-i18n="donate_button">Donate</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section split-section donor-section">
+        <article class="copy-column">
+          <h2 data-i18n="donor_title">Donate surplus food</h2>
+          <p data-i18n="donor_body">Market vendors and local businesses can help by donating surplus fruit, vegetables, and other vegan-friendly ingredients that are still good to eat.</p>
+          <a class="button" href="mailto:foodbankmaastricht@gmail.com?subject=Surplus%20food%20donation" data-i18n="donor_link">Contact us</a>
+        </article>
+        <div class="media-card">
+          <img src="assets/Get Involved _ 002.png" alt="Basket of donated vegetables" data-i18n-alt="img_food_donation">
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-main">
+          <div class="footer-brand-block">
+            <img class="footer-logo" src="assets/logo_white.svg" alt="Foodbank Maastricht">
+            <p data-i18n="footer_intro">A volunteer-run Friday kitchen that rescues surplus fruit and vegetables from local market stands and turns them into nourishing vegan meals.</p>
+            <a class="footer-email" href="mailto:foodbankmaastricht@gmail.com"><img src="assets/Icon_Email.svg" alt="" aria-hidden="true"><span data-i18n="email">foodbankmaastricht@gmail.com</span></a>
+          </div>
+          <nav class="footer-nav" aria-label="Footer navigation">
+            <a href="about.html" data-i18n="footer_about_link">About</a>
+            <a href="events.html" data-i18n="nav_events">Events</a>
+            <a href="#" data-i18n="footer_terms">Terms of use</a>
+            <a href="get-involved.html" data-i18n="nav_involved">Get involved</a>
+            <a href="contact.html" data-i18n="footer_contact_link">Contact</a>
+            <a href="#" data-i18n="footer_privacy">Privacy policy</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <p data-i18n="footer_rights">Foodbank Maastricht Platform Pvt Ltd. All Rights Reserved 2026</p>
+          <div class="footer-social" aria-label="Social media">
+            <a href="https://www.facebook.com/FoodbankMaastricht" target="_blank" rel="noopener" aria-label="Facebook"><img src="assets/Icon_Facebook.svg" alt="" aria-hidden="true"></a>
+            <a href="#" aria-label="X"><img src="assets/Icon_Twitter.svg" alt="" aria-hidden="true"></a>
+            <a href="https://www.instagram.com/foodbankmaastricht/" target="_blank" rel="noopener" aria-label="Instagram"><img src="assets/Icon_Instagram.svg" alt="" aria-hidden="true"></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
