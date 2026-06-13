@@ -281,6 +281,11 @@ p {
   box-shadow: 4px 4px 0 var(--ink);
 }
 
+.button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
 .button.dark {
   background: #050505;
   color: var(--cream);
@@ -1099,6 +1104,19 @@ textarea:focus {
   color: var(--green);
   font-size: 0.9rem;
   font-weight: 600;
+}
+
+.form-status.is-error {
+  color: var(--red-orange);
+}
+
+.donor-form {
+  margin-top: 34px;
+  max-width: 486px;
+}
+
+.donor-form textarea {
+  min-height: 140px;
 }
 
 .donation-band .section {

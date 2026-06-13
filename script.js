@@ -150,17 +150,21 @@ const translations = {
     label_name: "Name",
     label_email: "Email",
     label_message: "Message",
+    label_business: "Business name",
     placeholder_name: "Your name",
     placeholder_email: "you@example.com",
     placeholder_message: "Tell us how you would like to help",
+    placeholder_business: "Business name",
+    placeholder_donor_message: "Tell us what you can donate",
     signup_submit: "Send volunteer message",
-    signup_success: "Thanks. Your message is ready for the Foodbank team.",
+    signup_success: "Thanks. Your volunteer message has been sent.",
     donate_title: "Support the kitchen",
     donate_body: "Donations help cover basic costs for a free, volunteer-run initiative: kitchen supplies, cleaning materials, transport, and the everyday things that keep Friday dinners possible.",
     donate_button: "Donate",
     donor_title: "Donate surplus food",
     donor_body: "Market vendors and local businesses can help by donating surplus fruit, vegetables, and other vegan-friendly ingredients that are still good to eat.",
     donor_link: "Contact us about food donations",
+    donor_success: "Thanks. Your food donation enquiry has been sent.",
 
     events_eyebrow: "Events",
     events_title: "Friday dinner is the weekly heartbeat",
@@ -185,7 +189,10 @@ const translations = {
     contact_details_title: "Details",
     contact_form_title: "General contact form",
     contact_submit: "Send message",
-    contact_success: "Thanks. Your message is ready to send.",
+    contact_success: "Thanks. Your message has been sent.",
+    form_loading: "Sending...",
+    form_error: "Sorry, something went wrong. Please try again.",
+    form_network_error: "The website could not reach the form service. Please try again later.",
     map_title: "Map to Biesenwal 3, Maastricht"
   },
   nl: {
@@ -339,17 +346,21 @@ const translations = {
     label_name: "Naam",
     label_email: "E-mail",
     label_message: "Bericht",
+    label_business: "Bedrijfsnaam",
     placeholder_name: "Je naam",
     placeholder_email: "jij@example.com",
     placeholder_message: "Vertel hoe je wilt helpen",
+    placeholder_business: "Bedrijfsnaam",
+    placeholder_donor_message: "Vertel wat je kunt doneren",
     signup_submit: "Stuur vrijwilligersbericht",
-    signup_success: "Dank je. Je bericht staat klaar voor het Foodbank-team.",
+    signup_success: "Dank je. Je vrijwilligersbericht is verzonden.",
     donate_title: "Steun de keuken",
     donate_body: "Donaties helpen de basiskosten van een gratis initiatief van vrijwilligers te dragen: keukenspullen, schoonmaakmateriaal, vervoer en de dagelijkse dingen die vrijdagdiners mogelijk maken.",
     donate_button: "Doneer",
     donor_title: "Doneer voedseloverschotten",
     donor_body: "Marktverkopers en lokale bedrijven kunnen helpen door overtollige groente, fruit en andere vegan-vriendelijke ingredienten te doneren die nog goed eetbaar zijn.",
     donor_link: "Neem contact op over voedseldonaties",
+    donor_success: "Dank je. Je bericht over voedseldonatie is verzonden.",
 
     events_eyebrow: "Evenementen",
     events_title: "Het vrijdagdiner is het wekelijkse hart",
@@ -374,7 +385,10 @@ const translations = {
     contact_details_title: "Gegevens",
     contact_form_title: "Algemeen contactformulier",
     contact_submit: "Stuur bericht",
-    contact_success: "Dank je. Je bericht staat klaar om te verzenden.",
+    contact_success: "Dank je. Je bericht is verzonden.",
+    form_loading: "Versturen...",
+    form_error: "Sorry, er ging iets mis. Probeer het opnieuw.",
+    form_network_error: "De website kon de formulierservice niet bereiken. Probeer het later opnieuw.",
     map_title: "Kaart naar Biesenwal 3, Maastricht"
   }
 };
@@ -522,13 +536,56 @@ function setupMenu() {
 
 function setupForms() {
   document.querySelectorAll("form[data-success-key]").forEach((form) => {
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
       const lang = document.documentElement.lang || getStoredLanguage();
-      const message = translations[lang][form.dataset.successKey];
+      const endpoint = form.dataset.endpoint;
       const status = form.querySelector(".form-status");
-      if (status) status.textContent = message;
-      form.reset();
+      const submitButton = form.querySelector('button[type="submit"]');
+
+      if (!endpoint) {
+        if (status) status.textContent = translations[lang][form.dataset.successKey];
+        form.reset();
+        return;
+      }
+
+      const formData = new FormData(form);
+      const payload = Object.fromEntries(formData.entries());
+      payload.preferredLanguage = lang;
+      payload.page = window.location.pathname;
+
+      if (status) {
+        status.classList.remove("is-error");
+        status.textContent = translations[lang].form_loading;
+      }
+
+      if (submitButton) submitButton.disabled = true;
+
+      try {
+        const response = await fetch(endpoint, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok) {
+          throw new Error(result.error || translations[lang].form_error);
+        }
+
+        if (status) status.textContent = translations[lang][form.dataset.successKey];
+        form.reset();
+      } catch (error) {
+        if (status) {
+          status.classList.add("is-error");
+          status.textContent = error.message || translations[lang].form_network_error;
+        }
+      } finally {
+        if (submitButton) submitButton.disabled = false;
+      }
     });
   });
 }
