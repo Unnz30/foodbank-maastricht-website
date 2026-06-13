@@ -2,6 +2,20 @@
 
 All notable changes to this project should be documented here. Update this file with every future merge.
 
+## [1.2.2] — 2026-06-13
+### Added
+- Dynamic Instagram feed endpoint for the homepage
+- Frontend rendering for latest Instagram media with fallback placeholder images
+- Instagram environment variables for Render and local setup
+
+### Changed
+- Website can start even when MongoDB is not configured, while form submissions remain unavailable until the database is connected
+
+## [1.2.1] — 2026-06-13
+### Added
+- Render deployment blueprint for the website and Express API
+- README deployment instructions for Render and MongoDB Atlas
+
 ## [1.2.0] — 2026-06-13
 ### Added
 - Lightweight Node.js and Express backend for website form submissions

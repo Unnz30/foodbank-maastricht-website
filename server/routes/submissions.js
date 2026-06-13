@@ -1,4 +1,5 @@
 const express = require("express");
+const { isDatabaseConnected } = require("../db");
 const FormSubmission = require("../models/FormSubmission");
 
 const router = express.Router();
@@ -46,6 +47,10 @@ function asyncRoute(handler) {
 
 function createSubmissionHandler(type) {
   return asyncRoute(async (req, res) => {
+    if (!isDatabaseConnected()) {
+      throw createPublicError(503, "Form submissions are temporarily unavailable.");
+    }
+
     const submission = buildSubmission(req.body, type);
     const savedSubmission = await FormSubmission.create(submission);
 

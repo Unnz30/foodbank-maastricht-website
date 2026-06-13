@@ -3,6 +3,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const express = require("express");
 const { connectDatabase } = require("./db");
+const instagramRoutes = require("./routes/instagram");
 const submissionRoutes = require("./routes/submissions");
 
 dotenv.config();
@@ -23,6 +24,7 @@ app.get("/api/health", (_req, res) => {
   res.json({ ok: true, service: "foodbank-maastricht-api" });
 });
 
+app.use("/api", instagramRoutes);
 app.use("/api", submissionRoutes);
 app.use(express.static(publicDir, { extensions: ["html"] }));
 
@@ -47,13 +49,12 @@ app.use((error, _req, res, _next) => {
 });
 
 connectDatabase()
-  .then(() => {
+  .catch((error) => {
+    console.error("Unable to connect to MongoDB. Form submissions will be unavailable until it is fixed.");
+    console.error(error.message);
+  })
+  .finally(() => {
     app.listen(port, () => {
       console.log(`Foodbank Maastricht site running on http://localhost:${port}`);
     });
-  })
-  .catch((error) => {
-    console.error("Unable to start Foodbank Maastricht API.");
-    console.error(error.message);
-    process.exit(1);
   });
