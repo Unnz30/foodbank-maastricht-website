@@ -2,6 +2,11 @@
 
 All notable changes to this project should be documented here. Update this file with every future merge.
 
+## [1.2.1] — 2026-06-13
+### Added
+- Render deployment blueprint for the website and Express API
+- README deployment instructions for Render and MongoDB Atlas
+
 ## [1.2.0] — 2026-06-13
 ### Added
 - Lightweight Node.js and Express backend for website form submissions
