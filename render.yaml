@@ -16,3 +16,11 @@ services:
         sync: false
       - key: CORS_ORIGIN
         sync: false
+      - key: INSTAGRAM_ACCESS_TOKEN
+        sync: false
+      - key: INSTAGRAM_USER_ID
+        sync: false
+      - key: INSTAGRAM_GRAPH_VERSION
+        value: v23.0
+      - key: INSTAGRAM_CACHE_SECONDS
+        value: 900
