@@ -33,6 +33,24 @@ The website will run at `http://localhost:3000`.
 - `POST /api/food-donations` stores surplus food donation enquiries.
 - `GET /api/health` checks that the API is running.
 
+## Deploying to Render
+
+This repo includes `render.yaml`, which defines one Render web service for the full website and Express API.
+
+1. Create a MongoDB Atlas database and copy its connection string.
+2. In Render, create a new Blueprint from this GitHub repository.
+3. Render will read `render.yaml` and create the web service from the `main` branch.
+4. When prompted, add:
+
+   ```text
+   MONGODB_URI=your_mongodb_atlas_connection_string
+   CORS_ORIGIN=https://your-render-site-url.onrender.com
+   ```
+
+5. Deploy the service.
+
+After deployment, Render provides a public URL ending in `.onrender.com`. That URL serves the website and the form API.
+
 ## Environment Variables
 
 Use `.env.example` as the template:
